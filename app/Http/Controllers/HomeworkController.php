@@ -30,6 +30,18 @@ class HomeworkController extends Controller
 
     public function sendData(Request $request)
     {
+        $rules=[
+                'name'=>'required|min:5'
+        ];
+
+        $messages=[
+            'name.required'=>'El nombre de la tarea es obligatoria',
+            'name.min'=>'La tarea debe tener al menos 5 caracteres'
+        ];
+
+        $this->validate($request,$rules, $messages);
+
+
         $homework = new Homework();
         $homework->name = $request->input('name');
         $homework->description = $request->input('description');
