@@ -86,7 +86,7 @@
               
                                 <div class="text-center pt-1 mb-3 pb-1">
                                   <button data-mdb-button-init data-mdb-ripple-init class="btn btn-block fa-lg mb-3" type="submit" 
-                                      style="background-color: #e7c6ff; color: white; border: none; font-weight: 700; font-size: 1.25rem; padding: 10px 25px; border-radius: 50px;">
+                                      style="background-color: #9c89b8; color: white; border: none; font-weight: 700; font-size: 1.25rem; padding: 10px 25px; border-radius: 50px;">
                                       Registrarse
                                   </button>
                               </div>

@@ -27,3 +27,14 @@ Route::get('/tareas', [App\Http\Controllers\HomeworkController::class, 'index'])
 Route::get('/tareas/create', [App\Http\Controllers\HomeworkController::class, 'create']);
 Route::get('/tareas/{homework}/edit', [App\Http\Controllers\HomeworkController::class, 'edit']);
 Route::post('/tareas', [App\Http\Controllers\HomeworkController::class, 'sendData']);
+
+Route::put('/tareas/{homework}', [App\Http\Controllers\HomeworkController::class, 'update']);
+Route::delete('/tareas/{homework}', [App\Http\Controllers\HomeworkController::class, 'destroy']);
+
+//note route
+
+Route::get('/notas', [App\Http\Controllers\NoteController::class, 'index']);
+
+Route::get('/notas/create', [App\Http\Controllers\NoteController::class, 'create']);
+Route::get('/notas/{note}/edit', [App\Http\Controllers\NoteController::class, 'edit']);
+Route::post('/notas', [App\Http\Controllers\NoteController::class, 'sendData']);

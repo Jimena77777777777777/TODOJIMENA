@@ -62,17 +62,16 @@
       <div class="row align-items-center">
         <div class="col text-center">
           <h3 class="mb-0" style="font-size: 2.5rem; font-weight: bold; font-family: 'Baloo 2', cursive;">
-            Tarea
+            EditarTarea
           </h3>
         </div>
         
         <div class="col" style="text-align: right; padding-right: 0;">
-          <a href="{{ url('tareas') }}" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem;">
-            <i class="fas fa-chevron-left"></i>
-            Regresar
-          </a>
-        </div>
-        
+            <a href="{{ url('tareas') }}" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem;">
+              <i class="fas fa-chevron-left"></i>
+              Regresar
+            </a>
+          </div>
         
       </div>
     </div>
@@ -86,16 +85,17 @@
         @endforeach
       @endif
 
-      <form action="{{ url('tareas') }}" method="POST">
+      <form action="{{ url('/tareas/'.$homework->id) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="form-group">
           <label for="name">Nombre de la tarea</label>
-          <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+          <input type="text" name="name" class="form-control" value="{{ old('name',$homework->name) }}" required>
         </div>
 
         <div class="form-group">
           <label for="description">Descripción</label>
-          <input type="text" name="description" class="form-control" value="{{ old('description') }}">
+          <input type="text" name="description" class="form-control" value="{{ old('description', $homework->description) }}">
         </div>
 
         <div class="text-center">
@@ -104,12 +104,12 @@
         </div>
 
         
-        <div class="text-center">
-          <button type="submit" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem; border: none;">
-            Crear
-          </button>
-        </div>
         
+        <div class="text-center">
+            <button type="submit" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem; border: none;">
+              Guardar 
+            </button>
+          </div>
 
         <div class="text-center">
           <label>   </label>
@@ -117,7 +117,7 @@
         </div>
 
         <div class="image-container" style="display: flex; justify-content: center;">
-          <img src="https://i.pinimg.com/564x/b3/36/53/b3365351efca9cc1d014de92bd73e170.jpg" alt="Imagen Tareas" style="max-width: 100%; height: auto; display: block;">
+          <img src="https://i.pinimg.com/564x/66/46/d5/6646d542a47e9cb18fd11426d4b89b44.jpg" alt="Imagen Tareas" style="max-width: 100%; height: auto; display: block;">
         </div>
         
         

@@ -62,12 +62,12 @@
       <div class="row align-items-center">
         <div class="col text-center">
           <h3 class="mb-0" style="font-size: 2.5rem; font-weight: bold; font-family: 'Baloo 2', cursive;">
-            Tarea
+            Tus notas
           </h3>
         </div>
         
         <div class="col" style="text-align: right; padding-right: 0;">
-          <a href="{{ url('tareas') }}" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem;">
+          <a href="{{ url('notas') }}" class="btn" style="background-color: black; color: white; border-radius: 25px; font-weight: bold; padding: 8px 20px; font-size: 0.9rem;">
             <i class="fas fa-chevron-left"></i>
             Regresar
           </a>
@@ -86,10 +86,10 @@
         @endforeach
       @endif
 
-      <form action="{{ url('tareas') }}" method="POST">
+      <form action="{{ url('notas') }}" method="POST">
         @csrf
         <div class="form-group">
-          <label for="name">Nombre de la tarea</label>
+          <label for="name">Titulo</label>
           <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
         </div>
 
