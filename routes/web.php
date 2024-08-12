@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/****----------  homework routes */
+
+Route::get('/tareas', [App\Http\Controllers\HomeworkController::class, 'index']);
+
+Route::get('/tareas/create', [App\Http\Controllers\HomeworkController::class, 'create']);
+Route::get('/tareas/{homework}/edit', [App\Http\Controllers\HomeworkController::class, 'edit']);
+Route::post('/tareas', [App\Http\Controllers\HomeworkController::class, 'sendData']);

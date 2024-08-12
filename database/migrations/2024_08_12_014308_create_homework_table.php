@@ -13,8 +13,10 @@ class CreateHomeworkTable extends Migration
      */
     public function up()
     {
-        Schema::create('homework', function (Blueprint $table) {
-            $table->id();
+        Schema::create('homeworks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateHomeworkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homework');
+        Schema::dropIfExists('homeworks');
     }
 }
