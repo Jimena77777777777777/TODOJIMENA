@@ -84,6 +84,7 @@
             <strong>Por favor! </strong> {{ $error }}
           </div>
         @endforeach
+        
       @endif
 
       <form action="{{ url('notas') }}" method="POST">

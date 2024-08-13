@@ -49,6 +49,43 @@ class NoteController extends Controller
         return redirect('/notas');
     }
 
+    public function edit(Note $note)
+{
+    return view('notes.edit', compact('note')); 
+}
+
+
+
+
+
+public function update(Request $request, Note $note)
+{
+    $rules=[
+            'name'=>'required|min:5'
+    ];
+
+    $messages=[
+        'name.required'=>'El nombre de la tarea es obligatoria',
+        'name.min'=>'La tarea debe tener al menos 5 caracteres'
+    ];
+
+    $this->validate($request,$rules, $messages);
+
+
+    
+    $note->name = $request->input('name');
+    $note->description = $request->input('description');
+    $note->save();
+
+    return redirect('/notas');
+}
+
+public function destroy(Note $note)
+{
+    $note->delete(); // Corregir "delate" a "delete"
+    return redirect('notas');
+}
+
 
 
 

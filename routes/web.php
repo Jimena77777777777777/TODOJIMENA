@@ -38,3 +38,6 @@ Route::get('/notas', [App\Http\Controllers\NoteController::class, 'index']);
 Route::get('/notas/create', [App\Http\Controllers\NoteController::class, 'create']);
 Route::get('/notas/{note}/edit', [App\Http\Controllers\NoteController::class, 'edit']);
 Route::post('/notas', [App\Http\Controllers\NoteController::class, 'sendData']);
+
+Route::put('/notas/{note}', [App\Http\Controllers\NoteController::class, 'update']);
+Route::delete('/notas/{note}', [App\Http\Controllers\NoteController::class, 'destroy']);
