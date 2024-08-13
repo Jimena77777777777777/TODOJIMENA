@@ -16,10 +16,10 @@ class HomeworkController extends Controller
 
     public function index()
     {
-        // Obtener todas las tareas desde la base de datos
+       
         $homeworks = Homework::all();
 
-        // Pasar las tareas a la vista
+        
         return view('homeworks.index', compact('homeworks'));
     }
     

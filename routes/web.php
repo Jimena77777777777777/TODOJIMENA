@@ -41,3 +41,8 @@ Route::post('/notas', [App\Http\Controllers\NoteController::class, 'sendData']);
 
 Route::put('/notas/{note}', [App\Http\Controllers\NoteController::class, 'update']);
 Route::delete('/notas/{note}', [App\Http\Controllers\NoteController::class, 'destroy']);
+
+
+// calendar route
+Route::get('/calendario', [App\Http\Controllers\CalendarController::class, 'index']);
+
